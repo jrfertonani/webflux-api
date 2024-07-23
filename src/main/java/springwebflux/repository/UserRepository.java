@@ -15,4 +15,7 @@ public class UserRepository {
 
     private final ReactiveMongoTemplate mongoTemplate;
 
+    public Mono<User> save(final User user) {
+        return mongoTemplate.save(user);
+    }
 }
