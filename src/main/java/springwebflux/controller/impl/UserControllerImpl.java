@@ -22,4 +22,28 @@ public class UserControllerImpl implements UserController {
     private final UserService service;
     private final UserMapper mapper;
 
+    @Override
+    public ResponseEntity<Mono<Void>> save(UserRequest request) {
+        return null;
+    }
+
+    @Override
+    public ResponseEntity<Mono<UserResponse>> findById(String id) {
+        return null;
+    }
+
+    @Override
+    public ResponseEntity<Flux<UserResponse>> findAll() {
+        return null;
+    }
+
+    @Override
+    public ResponseEntity<Mono<UserResponse>> update(String id, UserRequest request) {
+        return null;
+    }
+
+    @Override
+    public ResponseEntity<Mono<Void>> delete(String id) {
+        return null;
+    }
 }
