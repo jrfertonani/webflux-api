@@ -11,7 +11,7 @@ import springwebflux.model.response.UserResponse;
 public interface UserController {
 
     @PostMapping
-    ResponseEntity<Mono<Void>> save(@RequestBody UserRequest request);
+    ResponseEntity<Mono<Void>> save(@Valid @RequestBody UserRequest request);
 
     @GetMapping("/{id}")
     ResponseEntity<Mono<UserResponse>> findById(@PathVariable String id);
