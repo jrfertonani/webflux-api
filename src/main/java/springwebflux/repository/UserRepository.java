@@ -27,4 +27,12 @@ public class UserRepository {
     public Flux<User> findAll() {
         return mongoTemplate.findAll(User.class);
     }
+
+    public Mono<User> findAndRemove(String id) {
+
+        Query query = new Query();
+        Criteria where = Criteria.where("id").is(id);
+
+        return mongoTemplate.findAndRemove(query.addCriteria(where), User.class);
+    }
 }
