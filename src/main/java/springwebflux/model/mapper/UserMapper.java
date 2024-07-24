@@ -1,4 +1,4 @@
-package springwebflux.mapper;
+package springwebflux.model.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -19,4 +19,6 @@ public interface UserMapper {
 
     @Mapping(target = "id", ignore = true)
     User toEntity(final UserRequest request);
+
+    UserResponse toResponse(final User entity);
 }
