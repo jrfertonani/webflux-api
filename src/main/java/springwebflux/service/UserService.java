@@ -2,6 +2,7 @@ package springwebflux.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import springwebflux.entity.User;
 import springwebflux.model.mapper.UserMapper;
@@ -29,6 +30,10 @@ public class UserService {
                                 format("Object not found. Id: %s, Type: %s", id, User.class.getSimpleName())
                         )
                 ));
+    }
+
+    public Flux<User> findAll(){
+        return repository.findAll();
     }
 
 }
