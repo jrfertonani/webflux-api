@@ -24,8 +24,10 @@ public class UserControllerImpl implements UserController {
 
     @Override
     public ResponseEntity<Mono<Void>> save(UserRequest request) {
+
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(service.save(request).then());
+                .body(service.save(request).then()
+        );
     }
 
     @Override
@@ -39,14 +41,20 @@ public class UserControllerImpl implements UserController {
 
     @Override
     public ResponseEntity<Flux<UserResponse>> findAll() {
+
         return ResponseEntity.ok().body(
                 service.findAll()
-                        .map(mapper::toResponse));
+                        .map(mapper::toResponse)
+        );
     }
 
     @Override
     public ResponseEntity<Mono<UserResponse>> update(String id, UserRequest request) {
-        return null;
+
+        return ResponseEntity.ok().body(
+                service.update(id, request)
+                        .map(mapper::toResponse)
+        );
     }
 
     @Override
